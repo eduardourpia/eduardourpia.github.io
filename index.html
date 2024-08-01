@@ -66,6 +66,13 @@
         .contact-form.active {
             display: block;
         }
+        .property-section {
+            display: none;
+            margin: 20px 0;
+        }
+        .property-section.active {
+            display: block;
+        }
         .button {
             background-color: #007BFF;
             color: white;
@@ -92,11 +99,15 @@
             const form = document.getElementById('contact-form');
             form.classList.toggle('active');
         }
+        function togglePropertySection() {
+            const section = document.getElementById('property-section');
+            section.classList.toggle('active');
+        }
     </script>
 </head>
 <body>
     <header>
-        <img src="logosemfundo.jpg" alt="Logo Eduardo Urpia">
+        <img src="logosemfundo.jpeg" alt="Logo Eduardo Urpia">
         <h1>Eduardo Urpia - Corretor de Imóveis</h1>
         <p>CRECI 27794</p>
     </header>
@@ -110,8 +121,8 @@
     <section>
         <div class="section-title">Portfólio</div>
         <div class="content">
-            <div>
-                <h2>Condomínio Praia Do Meio, Vera Cruz BA</h2>
+            <button class="button" onclick="togglePropertySection()">Condomínio Praia Do Meio, Vera Cruz BA</button>
+            <div id="property-section" class="property-section">
                 <div>
                     <h3>Casa duas suítes - R$370.000,00</h3>
                     <img src="imovel01.jpg" alt="Casa duas suítes">
