@@ -99,8 +99,8 @@
             const form = document.getElementById('contact-form');
             form.classList.toggle('active');
         }
-        function togglePropertySection() {
-            const section = document.getElementById('property-section');
+        function togglePropertySection(sectionId) {
+            const section = document.getElementById(sectionId);
             section.classList.toggle('active');
         }
     </script>
@@ -121,11 +121,11 @@
     <section>
         <div class="section-title">Portfólio</div>
         <div class="content">
-            <button class="button" onclick="togglePropertySection()">Condomínio Praia Do Meio, Vera Cruz BA</button>
-            <div id="property-section" class="property-section">
+            <button class="button" onclick="togglePropertySection('property-section-praia-do-meio')">Condomínio Praia Do Meio, Vera Cruz BA</button>
+            <div id="property-section-praia-do-meio" class="property-section">
                 <div>
-                    <h3>Casa 2 suítes - R$370.000,00</h3>
-                    <img src="imovel01.jpg" alt="Casa 2 suítes">
+                    <h3>Casa duas suítes - R$370.000,00</h3>
+                    <img src="imovel01.jpg" alt="Casa duas suítes">
                     <p>Casa com duas suítes, sala e cozinha americana, lavabo, área de serviço com uma suíte independente. Quiosque com churrasqueira, área verde, casa avarandada em um lote de 18x25 (450m²).</p>
                     <a href="https://drive.google.com/drive/folders/1c_68CtwqTL5NeRq7guv4vJZr_0mjQJTY?usp=sharing" target="_blank" class="button">Ver mais imagens</a>
                 </div>
@@ -140,6 +140,15 @@
                     <img src="fotocasa3.jpg" alt="Casa duplex 4 suítes">
                     <p>Linda casa duplex pé na areia com acesso direto à praia. Com piscina e uma extensa área verde composta por 4 suítes sendo 3 com ar condicionado.</p>
                     <a href="https://drive.google.com/drive/folders/1mWUhrYUPqNR52RWOC6gPpXz4z4Bk6l77?usp=sharing" target="_blank" class="button">Ver mais imagens</a>
+                </div>
+            </div>
+            <button class="button" onclick="togglePropertySection('property-section-lagoa-dourada')">Condomínio Lagoa Dourada, Vera Cruz BA</button>
+            <div id="property-section-lagoa-dourada" class="property-section">
+                <div>
+                    <h3>Casa 3 suítes - R$840.000,00</h3>
+                    <img src="fotocasa4.jpg" alt="Casa 3 suítes">
+                    <p>Ótima casa de frente para lagoa. Uma vista maravilhosa para você relaxar na ilha de Itaparica. A casa é composta por 2 suítes e 1 quarto, banheiro social, sala e cozinha americana. Dispõe também de 1 suíte com dependência para empregados. Terreno com 822m².</p>
+                    <a href="https://drive.google.com/drive/folders/1A07pP1khoY1j0S3tkT6rXMAnJ6uF8iRg?usp=sharing" target="_blank" class="button">Ver mais imagens</a>
                 </div>
             </div>
         </div>
@@ -175,6 +184,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
