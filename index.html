@@ -1,139 +1,193 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="favicon.ico.jpg">
     <title>Eduardo Urpia - Corretor de Imóveis</title>
     <style>
-        /* Seu estilo CSS aqui */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background-color: #333;
-            color: white;
+            background-color: #444;
+            color: #fff;
+            padding: 20px 0;
             text-align: center;
-            padding: 1em 0;
+            position: relative;
         }
         header img {
-            width: 50px;
-            height: 50px;
+            max-width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+        header h1 {
+            margin: 10px 0;
+        }
+        header p {
+            margin: 5px 0;
         }
         section {
-            padding: 2em;
+            padding: 20px;
             text-align: center;
         }
-        section h2 {
-            margin-top: 0;
-        }
-        section img {
-            width: 150px;
-            height: 150px;
+        .profile-pic {
             border-radius: 50%;
+            max-width: 150px;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
         }
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #444;
+            color: #fff;
             text-align: center;
-            padding: 1em 0;
+            padding: 10px 0;
+            position: relative;
         }
-        footer img {
-            width: 24px;
-            height: 24px;
+        footer a {
+            color: #fff;
+            text-decoration: none;
             margin: 0 10px;
         }
-        .btn {
-            display: inline-block;
-            padding: 0.5em 1em;
-            color: white;
-            background-color: #007BFF;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 1em 0;
+        .contact-form {
+            display: none;
+            margin: 20px 0;
         }
-        .btn:hover {
+        .contact-form.active {
+            display: block;
+        }
+        .property-section {
+            display: none;
+            margin: 20px 0;
+        }
+        .property-section.active {
+            display: block;
+        }
+        .button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .button:hover {
             background-color: #0056b3;
         }
+        .section-title {
+            background-color: #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.5em;
+        }
     </style>
+    <script>
+        function toggleContactForm() {
+            const form = document.getElementById('contact-form');
+            form.classList.toggle('active');
+        }
+        function togglePropertySection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('active');
+        }
+    </script>
 </head>
 <body>
     <header>
-        <img src="logosemfundo.jpg" alt="Logo de Eduardo Urpia">
+        <img src="logosemfundo.jpg" alt="Logo Eduardo Urpia">
         <h1>Eduardo Urpia - Corretor de Imóveis</h1>
         <p>CRECI 27794</p>
     </header>
-    <section id="sobre-mim">
-        <h2>Sobre Mim</h2>
-        <img src="fotoperfil.jpg" alt="Eduardo Urpia">
-        <p>Olá! Eu sou Eduardo Urpia, O seu melhor corretor de imóveis! Possuo os melhores imóveis da Ilha de Itaparica BA e região. Minha missão é ajudar você a encontrar o imóvel dos seus sonhos, oferecendo um atendimento personalizado e de alta qualidade.</p>
-    </section>
-    <section id="portfolio">
-        <h2>Portfólio</h2>
-        <!-- Sessões de imóveis aqui -->
-        <button id="btnPraiaDoMeio">Condomínio Praia Do Meio, Vera Cruz BA</button>
-        <div id="praiaDoMeio" style="display: none;">
-            <h3>Casa duas suítes - R$370.000,00</h3>
-            <img src="imovel01.jpg" alt="Casa duas suítes">
-            <p>Linda casa com duas suítes em um condomínio fechado. Excelente localização a poucos metros da praia.</p>
-            <a href="https://drive.google.com/drive/folders/1gwQAu0km3e62d38yDDCiMmaOgD_HvwIO?usp=sharing" target="_blank" class="btn">Ver mais fotos</a>
-            
-            <h3>Casa 4 quartos - R$495.000,00</h3>
-            <img src="fotocasa2.jpg" alt="Casa 4 quartos">
-            <p>Casa a 70mt da praia com 4 quartos, sendo uma suíte externa totalmente independente da casa. Jardim e área gourmet com piscina.</p>
-            <a href="https://drive.google.com/drive/folders/1gwQAu0km3e62d38yDDCiMmaOgD_HvwIO?usp=sharing" target="_blank" class="btn">Ver mais fotos</a>
-
-            <h3>Casa duplex 4 suítes - R$950.000,00</h3>
-            <img src="fotocasa3.jpg" alt="Casa duplex 4 suítes">
-            <p>Linda casa duplex pé na areia com acesso direto à praia. Com piscina e uma extensa área verde composta por 4 suítes sendo 3 com ar condicionado.</p>
-            <a href="https://drive.google.com/drive/folders/1mWUhrYUPqNR52RWOC6gPpXz4z4Bk6l77?usp=sharing" target="_blank" class="btn">Ver mais fotos</a>
-
-            <h3>Casa Duplex 5 quartos - R$690.000,00</h3>
-            <img src="fotocasa6.jpg" alt="Casa Duplex 5 quartos">
-            <p>Casa duplex com 5/4 sendo 3 suítes no primeiro andar uma ante sala. Sala, cozinha, lavabo e banheiro social. Área gourmet, garagem coberta e descoberta para mais de 4 carros. Área construída 200m2.</p>
-            <a href="https://drive.google.com/drive/folders/1M7kTrDxzRl3lkBEC3LkP65Kqzn_uZsFw?usp=sharing" target="_blank" class="btn">Ver mais fotos</a>
+    <section>
+        <div class="section-title">Sobre Mim</div>
+        <img src="fotoperfil.jpg" alt="Eduardo Urpia" class="profile-pic">
+        <div class="content">
+            <p>Olá! Eu sou Eduardo Urpia, O seu melhor corretor de imóveis! Possuo os melhores imóveis da Ilha de Itaparica BA e região. Minha missão é ajudar você a encontrar o imóvel dos seus sonhos, oferecendo um atendimento personalizado e de alta qualidade.</p>
         </div>
-
-        <button id="btnLagoaDourada">Condomínio Lagoa Dourada, Vera Cruz BA</button>
-        <div id="lagoaDourada" style="display: none;">
-            <h3>Casa 3 suítes - R$840.000,00</h3>
-            <img src="fotocasa4.jpg" alt="Casa 3 suítes">
-            <p>Ótima casa de frente para lagoa. Uma vista maravilhosa para você relaxar na Ilha de Itaparica. A casa é composta por 2 suítes e 1 quarto. Banheiro social, sala e cozinha americana. Dispõe também de 1 suíte com dependência para empregados. Terreno com 822m2.</p>
-            <a href="https://drive.google.com/drive/folders/1A07pP1khoY1j0S3tkT6rXMAnJ6uF8iRg?usp=sharing" target="_blank" class="btn">Ver mais fotos</a>
-
-            <h3>Casa duplex 4 suítes - R$1.500.000,00</h3>
-            <img src="fotocasa5.jpg" alt="Casa duplex 4 suítes">
-            <p>Linda casa duplex a 100 mt da praia. Lote com 1260m2 com frente e fundo. Área construída 365m2. Casa composta por: sala de estar, sala de jantar, cozinha, área gourmet, uma suíte no térreo, lavabo, dependência de empregados, Piscina, primeiro andar com 3 suítes. Casa maravilhosa de alto padrão.</p>
-            <a href="https://drive.google.com/drive/folders/1cUSR3EOZPROKL0lLuyEuqWAPK5Q2YxN1?usp=sharing" target="_blank" class="btn">Ver mais fotos</a>
+    </section>
+    <section>
+        <div class="section-title">Portfólio</div>
+        <div class="content">
+            <button class="button" onclick="togglePropertySection('property-section-praia-do-meio')">Condomínio Praia Do Meio, Vera Cruz BA</button>
+            <div id="property-section-praia-do-meio" class="property-section">
+                <div>
+                    <h3>Casa duas suítes - R$370.000,00</h3>
+                    <img src="imovel01.jpg" alt="Casa duas suítes">
+                    <p>Casa com duas suítes, sala e cozinha americana, lavabo, área de serviço com uma suíte independente. Quiosque com churrasqueira, área verde, casa avarandada em um lote de 18x25 (450m²).</p>
+                    <a href="https://drive.google.com/drive/folders/1c_68CtwqTL5NeRq7guv4vJZr_0mjQJTY?usp=sharing" target="_blank" class="button">Ver mais imagens</a>
+                </div>
+                <div>
+                    <h3>Casa 4 quartos - R$495.000,00</h3>
+                    <img src="fotocasa2.jpg" alt="Casa 4 quartos">
+                    <p>Casa a 70mt da praia com 4/4 sendo uma suíte externa, totalmente independente da casa. Jardim e área gourmet com piscina.</p>
+                    <a href="https://drive.google.com/drive/folders/1gwQAu0km3e62d38yDDCiMmaOgD_HvwIO?usp=sharing" target="_blank" class="button">Ver mais imagens</a>
+                </div>
+                <div>
+                    <h3>Casa duplex 4 suítes - R$950.000,00</h3>
+                    <img src="fotocasa3.jpg" alt="Casa duplex 4 suítes">
+                    <p>Linda casa duplex pé na areia com acesso direto à praia. Com piscina e uma extensa área verde composta por 4 suítes sendo 3 com ar condicionado.</p>
+                    <a href="https://drive.google.com/drive/folders/1mWUhrYUPqNR52RWOC6gPpXz4z4Bk6l77?usp=sharing" target="_blank" class="button">Ver mais imagens</a>
+                </div>
+                <div>
+                    <h3>Casa Duplex 5 quartos - R$690.000,00</h3>
+                    <img src="fotocasa6.jpg" alt="Casa Duplex 5 quartos">
+                    <p>Casa duplex com 5/4 sendo 3 suítes no primeiro andar uma ante sala. Sala, cozinha, lavabo e banheiro social. Área gourmet, garagem coberta e descoberta para mais de 4 carros. Área construída 200m2.</p>
+                    <a href="https://drive.google.com/drive/folders/1M7kTrDxzRl3lkBEC3LkP65Kqzn_uZsFw?usp=sharing" target="_blank" class="button">Ver mais imagens</a>
+                </div>
+            </div>
+            <button class="button" onclick="togglePropertySection('property-section-lagoa-dourada')">Condomínio Lagoa Dourada, Vera Cruz BA</button>
+            <div id="property-section-lagoa-dourada" class="property-section">
+                <div>
+                    <h3>Casa 3 suítes - R$840.000,00</h3>
+                    <img src="fotocasa4.jpg" alt="Casa 3 suítes">
+                    <p>Ótima casa de frente para lagoa. Uma vista maravilhosa para você relaxar na ilha de Itaparica. A casa é composta por 2 suítes e 1 quarto, banheiro social, sala e cozinha americana. Dispõe também de 1 suíte com dependência para empregados. Terreno com 822m².</p>
+                    <a href="https://drive.google.com/drive/folders/1A07pP1khoY1j0S3tkT6rXMAnJ6uF8iRg?usp=sharing" target="_blank" class="button">Ver mais imagens</a>
+                </div>
+                <div>
+                    <h3>Casa duplex 4 suítes - R$1.500.000,00</h3>
+                    <img src="fotocasa5.jpg" alt="Casa duplex 4 suítes">
+                    <p>Linda casa duplex a 100 mt da praia. Lote com 1260m2 com frente e fundo. Área construída 365m2. Casa composta por: sala de estar, sala de jantar, cozinha, área gourmet, uma suíte no térreo, lavabo, dependência de empregados, Piscina, primeiro andar com 3 suítes. Casa maravilhosa de alto padrão.</p>
+                    <a href="https://drive.google.com/drive/folders/1cUSR3EOZPROKL0lLuyEuqWAPK5Q2YxN1?usp=sharing" target="_blank" class="button">Ver mais imagens</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="section-title">Contato</div>
+        <div class="content">
+            <button class="button" onclick="toggleContactForm()">Entrar em Contato</button>
+            <div id="contact-form" class="contact-form">
+                <form action="https://formspree.io/f/movadjvq" method="POST">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="message">Mensagem:</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                    <button type="submit" class="button">Enviar</button>
+                </form>
+            </div>
         </div>
     </section>
     <footer>
-        <p>&copy; 2024 Eduardo Urpia. Todos os direitos reservados.</p>
+        <p>2024 Eduardo Urpia. Todos os direitos reservados</p>
         <a href="https://wa.me/5571987089474" target="_blank"><img src="logowhatsapp.jpeg" alt="WhatsApp" style="width: 24px; height: 24px;"></a>
         <a href="https://www.instagram.com/eduardourpia_corretor" target="_blank"><img src="logoinstagram.jpeg" alt="Instagram" style="width: 24px; height: 24px;"></a>
     </footer>
-    <script>
-        document.getElementById('btnPraiaDoMeio').addEventListener('click', function() {
-            var div = document.getElementById('praiaDoMeio');
-            if (div.style.display === 'none') {
-                div.style.display = 'block';
-            } else {
-                div.style.display = 'none';
-            }
-        });
-
-        document.getElementById('btnLagoaDourada').addEventListener('click', function() {
-            var div = document.getElementById('lagoaDourada');
-            if (div.style.display === 'none') {
-                div.style.display = 'block';
-            } else {
-                div.style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
 
